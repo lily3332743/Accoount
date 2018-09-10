@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_foucs"
+            android:icon="@mipmap/nav_friends"
+            android:title="我的关注" />
+        <item
+            android:id="@+id/nav_check"
+            android:icon="@mipmap/nav_call"
+            android:title="打卡签到" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@mipmap/nav_location"
+            android:title="类别设置" />
+        <item
+            android:id="@+id/nav_modify"
+            android:icon="@mipmap/nav_mail"
+            android:title="修改密码" />
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@mipmap/nav_task"
+            android:title="退出登录" />
+    </group>
+</menu>

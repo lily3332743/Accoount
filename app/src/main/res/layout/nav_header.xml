@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--左侧弹出框上面的布局文件-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:orientation="horizontal"
+    android:background="?attr/colorPrimary"
+    android:paddingTop="40dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/icon_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:src="@drawable/nav_icon" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icon_image"
+        android:paddingTop="7dp"
+        android:text="li li"
+        android:gravity="center_horizontal"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+
+    />
+
+
+
+    <LinearLayout
+        android:id="@+id/first_LinearLayout"
+        android:layout_below="@id/username"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="7dp"
+        android:layout_height="30dp">
+
+
+        <TextView
+            android:id="@+id/allDay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="57"
+            android:gravity="center_horizontal"
+            android:textColor="#CD853F"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/allCount"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="10"
+            android:gravity="center_horizontal"
+            android:textColor="#A0522D"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second_LinearLayout"
+        android:layout_below="@id/first_LinearLayout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="40dp">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="记账总天数"
+
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="记账总笔数"
+            android:gravity="center_horizontal"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
