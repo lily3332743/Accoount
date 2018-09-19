@@ -2,7 +2,9 @@ package com.example.account;
 
 
 import android.graphics.Typeface;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.NavigationView;
@@ -23,6 +25,8 @@ import android.text.TextPaint;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity
     private BottomNavigationBar mBottomNavigationBar;
     private DrawerLayout mDrawerLayout;
 
+    AnimationDrawable anim;
+
     private String[] mTitles = new String[]{"记账", "明细", "分析", "社区"};
 
 
@@ -54,12 +60,24 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            findViewById(android.R.id.content).setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+        }
+
         setContentView(R.layout.activity_main);
+
+
+        ConstraintLayout constraintLayout=(ConstraintLayout)findViewById(R.id.boss_content);
+         anim = (AnimationDrawable) constraintLayout.getBackground();
+        anim.setEnterFadeDuration(6000);
+        anim.setExitFadeDuration(2000);
 
 
 
         mDrawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);//左侧弹出框
         NavigationView navView=(NavigationView)findViewById(R.id.nav_view);
+
 
 
         navView.setCheckedItem(R.id.nav_foucs);
@@ -82,6 +100,8 @@ public class MainActivity extends AppCompatActivity
 
         addAccountFragment defaultFragment=new addAccountFragment();
         replaceFragment(defaultFragment);//默认载入记账fragment
+
+
 
     }
 
@@ -184,6 +204,19 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    protected void onResume() {
+        super.onResume();
+        if (anim != null && !anim.isRunning())
+            anim.start();
+
+    }
+
+    protected void onPause() {
+        super.onPause();
+        if (anim != null && anim.isRunning())
+            anim.stop();
+
+    }
 
     //对于位于toolbar位置的item的点击事件的处理
     public boolean onOptionsItemSelected(MenuItem item){
@@ -191,9 +224,8 @@ public class MainActivity extends AppCompatActivity
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
-            case R.id.cancel:
-                //进行返回到上一个浏览页面的操作
-                Toast.makeText(this,"你点击了取消",Toast.LENGTH_SHORT).show();
+            case R.id.about:
+                Toast.makeText(this,"你点击了关于",Toast.LENGTH_SHORT).show();
                 break;
             default:
         }

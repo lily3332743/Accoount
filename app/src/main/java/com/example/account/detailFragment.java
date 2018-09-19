@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.dou361.dialogui.DialogUIUtils;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +48,8 @@ public class detailFragment extends Fragment implements click_detail_itemFragmen
     private String mParam2;
 
     private View view;
+
+    View rootView;
     DrawerLayout mDrawerLayout;
     TextView sort_text;
     TextView search_text;
@@ -148,12 +153,15 @@ public class detailFragment extends Fragment implements click_detail_itemFragmen
         recyclerView.setAdapter(adapter);
         adapter.addData(detail_item_List);
 
+        //这个是当我们点击了图标后跳出来的记账页面
+        rootView = View.inflate(getActivity(), R.layout.fragment_click_detail_item, null);
+
 //       Item的点击事件
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 //position从零开始的
-
+                DialogUIUtils.showCustomAlert(getActivity(), rootView, Gravity.BOTTOM,true,true).show();
             }
         });
 
@@ -166,6 +174,9 @@ public class detailFragment extends Fragment implements click_detail_itemFragmen
                 return false;
             }
         });
+
+
+
 
 
     }

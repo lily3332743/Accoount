@@ -3,6 +3,8 @@
 
 
         <android.support.constraint.ConstraintLayout
+
+    android:background="@drawable/animation_list"
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/boss_content"
                 android:layout_width="match_parent"

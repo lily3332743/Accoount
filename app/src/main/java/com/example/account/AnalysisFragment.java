@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 
 /**
@@ -28,6 +29,9 @@ public class AnalysisFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    View view;
+    ImageButton calender;
 
     public AnalysisFragment() {
         // Required empty public constructor
@@ -64,7 +68,14 @@ public class AnalysisFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_analysis, container, false);
+        view=inflater.inflate(R.layout.fragment_analysis, container, false);
+        refresh();
+        return view;
+    }
+
+    private void refresh() {
+        calender =view.findViewById(R.id.analysis_calendar);
+        calender.setBackgroundResource(R.mipmap.home_detail_btn_p);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

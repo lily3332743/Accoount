@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/login_tou_xiang"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/nav_icon" />
+
+    <TextView
+        android:id="@+id/login_username"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="MyUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/login_your_username"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:met_iconLeft="@mipmap/nav_member"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/login_your_password"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:met_iconLeft="@mipmap/password_hide"/>
+
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:text="记住密码"/>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/BtnLogin"
+        android:layout_width="140dp"
+        android:text="登录"
+        android:layout_marginLeft="30dp"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"/>
+
+    <Button
+        android:id="@+id/BtnRegister"
+        android:layout_width="140dp"
+        android:text="注册"
+        android:layout_marginLeft="30dp"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"/>
+        </LinearLayout>
+
+</LinearLayout>
